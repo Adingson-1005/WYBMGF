@@ -205,12 +205,12 @@ export default function Hannah() {
 
             {/* corner flowers — inside nb-open so they're relative to the notebook */}
             <img src={sglily2} alt="" className="nb-corner-lily nb-corner-lily--br" />
-
+            <button className="nb-close-btn" onClick={handleCloseBook} aria-label="Close">✕</button>
+            
             <div
               className={`nb-book nb-book-enter ${closing ? 'nb-book-exit' : ''}`}
               key={bookKey}
             >
-              <button className="nb-close-btn" onClick={handleCloseBook} aria-label="Close">✕</button>
 
               {/* Spine */}
               <div className="nb-open-spine"><Spirals count={8} /></div>
