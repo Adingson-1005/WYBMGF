@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import '../css/Hannah.css'
 import centro2 from '../assets/centro2.jpg'
+import sglily2 from '../assets/sglily2.png'
 
 /* ── BACKGROUND LILIES ── */
 const BG_LILIES = [
@@ -16,7 +17,7 @@ const BG_LILIES = [
   { x: '55%', y: '40%', size: 70,  tilt: '-30deg', dur: '4s',   delay: '3s'   },
   { x: '38%', y: '88%', size: 105, tilt: '12deg',  dur: '5.5s', delay: '1.5s' },
   { x: '78%', y: '90%', size: 88,  tilt: '-18deg', dur: '4.8s', delay: '0.7s' },
-  { x: '5%', y: '45%', size: 92,  tilt: '-10deg', dur: '4s',   delay: '1s'   },
+  { x: '5%',  y: '45%', size: 92,  tilt: '-10deg', dur: '4s',   delay: '1s'   },
   { x: '49%', y: '10%', size: 70,  tilt: '-20deg', dur: '2s',   delay: '3s'   },
   { x: '58%', y: '60%', size: 105, tilt: '18deg',  dur: '5.5s', delay: '1.5s' },
   { x: '98%', y: '40%', size: 88,  tilt: '-10deg', dur: '4.8s', delay: '0.7s' },
@@ -63,51 +64,121 @@ const Spirals = ({ count = 6 }) => (
   </>
 )
 
-/* ── LETTER CONTENT ── */
-const LetterContent = () => (
-  <div className="nb-letter">
-    <p className="nb-letter-greeting">Dear Hannah,</p>
-    <p className="nb-letter-body">
-      There are some people who make the world feel a little warmer
-      just by being in it — and you are one of them.<br /><br />
-      I put these flowers here because they reminded me of you:
-      soft, beautiful, and quietly extraordinary.<br /><br />
-      Thank you for being you. ♡
-    </p>
-    <p className="nb-letter-sign">— always yours</p>
-  </div>
-)
+/* ── RIGHT PAGE CONTENTS (6 pages) ── */
+const PAGE_COUNT = 6
+
+const RightPageContent = ({ pageNum }) => {
+  if (pageNum === 1) return (
+    <div className="nb-letter">
+      <p className="nb-letter-greeting">Dear Hannah,</p>
+      <p className="nb-letter-body">
+        There are some people who make the world feel a little warmer
+        just by being in it — and you are one of them.<br /><br />
+        I put these flowers here because they reminded me of you:
+        soft, beautiful, and quietly extraordinary.<br /><br />
+        Thank you for being you. ♡
+      </p>
+    </div>
+  )
+  if (pageNum === 2) return (
+    <div className="nb-letter">
+      <p className="nb-letter-greeting">Every moment with you</p>
+      <p className="nb-letter-body">
+        I still remember the first time I saw you smile —
+        it was like the whole room got a little brighter.<br /><br />
+        I hope you know how much every little moment
+        with you means to me. Each one is a page
+        I never want to stop reading.
+      </p>
+    </div>
+  )
+  if (pageNum === 3) return (
+    <div className="nb-letter">
+      <p className="nb-letter-greeting">Things I love about you</p>
+      <p className="nb-letter-body">
+        The way you laugh when something catches you off guard.<br /><br />
+        The way you care so deeply about the people around you.<br /><br />
+        The way you make ordinary days feel like something special.<br /><br />
+        I could fill a hundred pages and still not be done.
+      </p>
+    </div>
+  )
+  if (pageNum === 4) return (
+    <div className="nb-letter">
+      <p className="nb-letter-greeting">A promise</p>
+      <p className="nb-letter-body">
+        I promise to be here — on the good days
+        and the hard ones, the loud ones and the quiet ones.<br /><br />
+        I promise to choose you, every single day,
+        without hesitation.<br /><br />
+        You deserve all the love in the world, Hannah.
+        And I want to be the one who gives it to you.
+      </p>
+    </div>
+  )
+  if (pageNum === 5) return (
+    <div className="nb-letter">
+      <p className="nb-letter-greeting">Just so you know</p>
+      <p className="nb-letter-body">
+        You are my favorite person.<br /><br />
+        My favorite voice, my favorite laugh,
+        my favorite everything.<br /><br />
+        Wherever life takes us, I am just glad
+        I get to walk through it with you beside me. ♡
+      </p>
+    </div>
+  )
+  if (pageNum === 6) return (
+    <div className="nb-letter">
+      <p className="nb-letter-greeting">Until the next page…</p>
+      <p className="nb-letter-body">
+        This notebook may end here, but our story
+        is only just beginning.<br /><br />
+        Thank you for opening this, for reading every word,
+        and most of all — for being you.<br /><br />
+        I love you, Hannah. ♡
+      </p>
+      <p className="nb-letter-close-hint">tap once more to close</p>
+    </div>
+  )
+  return null
+}
 
 /* ── MAIN ── */
 export default function Hannah() {
-  const [page, setPage]         = useState('letter')
-  const [phase, setPhase]       = useState('idle')
+  const [pageNum, setPageNum]   = useState(1)
+  const [fading, setFading]     = useState(false)
   const [bookOpen, setBookOpen] = useState(false)
   const [bookKey, setBookKey]   = useState(0)
+  const [closing, setClosing]   = useState(false)
 
   const handleOpenBook = () => {
     setBookKey(k => k + 1)
     setBookOpen(true)
-    setPage('letter')
-    setPhase('idle')
+    setPageNum(1)
+    setFading(false)
   }
 
-  const handleFlip = () => {
-    if (phase === 'flipping') return
-    setPhase('flipping')
+  const handleCloseBook = () => {
+    setClosing(true)
     setTimeout(() => {
-      setPage('photo')
-      setPhase('idle')
-    }, 850)
+      setBookOpen(false)
+      setClosing(false)
+      setPageNum(1)
+    }, 400)
   }
 
-  const handleFlipBack = () => {
-    if (phase === 'flipping') return
-    setPhase('flipping')
+  const handleNextPage = () => {
+    if (fading) return
+    if (pageNum === PAGE_COUNT) {
+      handleCloseBook()
+      return
+    }
+    setFading(true)
     setTimeout(() => {
-      setPage('letter')
-      setPhase('idle')
-    }, 850)
+      setPageNum(p => p + 1)
+      setFading(false)
+    }, 350)
   }
 
   return (
@@ -131,8 +202,15 @@ export default function Hannah() {
         {/* ── OPEN BOOK ── */}
         {bookOpen && (
           <div className="nb-open">
-            <div className={`nb-book ${bookKey ? 'nb-book-enter' : ''}`} key={bookKey}>
-              <button className="nb-close-btn" onClick={() => setBookOpen(false)} aria-label="Close">✕</button>
+
+            {/* corner flowers — inside nb-open so they're relative to the notebook */}
+            <img src={sglily2} alt="" className="nb-corner-lily nb-corner-lily--br" />
+
+            <div
+              className={`nb-book nb-book-enter ${closing ? 'nb-book-exit' : ''}`}
+              key={bookKey}
+            >
+              <button className="nb-close-btn" onClick={handleCloseBook} aria-label="Close">✕</button>
 
               {/* Spine */}
               <div className="nb-open-spine"><Spirals count={8} /></div>
@@ -142,56 +220,33 @@ export default function Hannah() {
                 <img src={centro2} alt="centro2" className="nb-photo" />
               </div>
 
-              {/* ── RIGHT PAGE: letter (default) or photo ── */}
-              <div className="nb-page nb-page-right">
-
-                {/* static content underneath the flip layer */}
-                {page === 'letter' && <LetterContent />}
-                {page === 'photo'  && (
-                  <img src={centro2} alt="centro2" className="nb-photo" />
-                )}
-
-                {/* ── PAGE FLIP LAYER ── */}
-                {phase === 'flipping' && (
-                  <div className="nb-flip-wrapper">
-                    {/* front = what was showing BEFORE the flip */}
-                    <div className="nb-flip-front">
-                      {page === 'letter'
-                        ? <LetterContent />
-                        : <img src={centro2} alt="" className="nb-photo" />
-                      }
-                    </div>
-                    {/* back = what shows AFTER the flip */}
-                    <div className="nb-flip-back">
-                      {page === 'letter'
-                        ? <img src={centro2} alt="" className="nb-photo" />
-                        : <LetterContent />
-                      }
-                    </div>
-                  </div>
-                )}
-
+              {/* ── RIGHT PAGE: fades between pages ── */}
+              <div
+                className="nb-page nb-page-right nb-page-clickable"
+                onClick={handleNextPage}
+              >
+                <div className={`nb-fade-layer ${fading ? 'nb-fade-out' : 'nb-fade-in'}`}>
+                  <RightPageContent pageNum={pageNum} />
+                </div>
               </div>
+
             </div>
 
-            {/* flip hint */}
-            {phase === 'idle' && (
-              <p
-                style={{
-                  textAlign: 'center',
-                  marginTop: '14px',
-                  fontFamily: 'Cormorant Garamond, serif',
-                  fontStyle: 'italic',
-                  fontSize: '13px',
-                  color: '#a07850',
-                  cursor: 'pointer',
-                  userSelect: 'none',
-                }}
-                onClick={page === 'letter' ? handleFlip : handleFlipBack}
-              >
-                {page === 'letter' ? '↩ flip to see more' : '↪ flip back to letter'}
+            {/* page indicator + hint */}
+            <div className="nb-bottom-bar">
+              <span className="nb-page-dots">
+                {Array.from({ length: PAGE_COUNT }).map((_, i) => (
+                  <span
+                    key={i}
+                    className={`nb-dot ${i + 1 === pageNum ? 'nb-dot--active' : ''}`}
+                  />
+                ))}
+              </span>
+              <p className="nb-flip-hint">
+                {pageNum < PAGE_COUNT ? 'click the page to turn →' : 'click to close the notebook'}
               </p>
-            )}
+            </div>
+
           </div>
         )}
 
