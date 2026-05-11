@@ -82,19 +82,18 @@ const RightPageContent = ({ pageNum }) => {
          I still care about you so much. I hope this little notebook can be a reminder of how much you mean to me, 
          and how grateful I am to have you in my life. <br /> <br /> 
          So, here goes nothing, a few pages of thoughts, feelings,
-         and memories that I never want to forget <br /> <br />
+         and memories that I never want to forget. <br /> <br />
         </>
       ),
     },
     2: {
-      greeting: 'Every moment with you',
+      greeting: 'Maximum effort',
       body: (
         <>
-          I still remember the first time I saw you smile —
-          it was like the whole room got a little brighter.<br /><br />
-          I hope you know how much every little moment
-          with you means to me. Each one is a page
-          I never want to stop reading.
+          <br /> <br /> Here I am, 6am na in the morning, wala pakong tulog, tinatry kopang tapusin tong notebook natoh for you.
+          and as im writing this, i just want you to know that every word in here is coming straight from the heart. <br /> <br />
+          I bought you flowers, wrote you letters, made you lego flower, the ferrero, and now etong coded notebook. Who would've thought, na ako,
+          someone who has never done anything in his life na may effort, ay finally doing something na may worth for someone else. <br /> <br />
         </>
       ),
     },

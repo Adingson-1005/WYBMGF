@@ -353,7 +353,7 @@
   height: auto;
 }
 .nb-corner-lily--br {
-  bottom: -30px;
+  bottom: -60px;
   right: -130px;
 }
 
@@ -500,7 +500,7 @@
   }
 
   .nb-letter-body {
-    font-size: 2.5vw;
+    font-size: 2vw;
     line-height: 1.7;
   }
 
