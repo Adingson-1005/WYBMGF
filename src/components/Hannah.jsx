@@ -98,7 +98,7 @@ const RightPageContent = ({ pageNum }) => {
       ),
     },
     3: {
-      greeting: 'Things I love about you',
+      greeting: 'Reminiscing',
       body: (
         <>
           The way you laugh when something catches you off guard.<br /><br />
