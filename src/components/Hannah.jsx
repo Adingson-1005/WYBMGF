@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import '../css/Hannah.css'
 import centro2 from '../assets/centro2.jpg'
-import sglily2 from '../assets/sglily2.png'
+import sglily1 from '../assets/sglily1.png'
 
 /* ── BACKGROUND LILIES ── */
 const BG_LILIES = [
@@ -91,9 +91,9 @@ const RightPageContent = ({ pageNum }) => {
       body: (
         <>
           <br /> <br /> Here I am, 6am na in the morning, wala pakong tulog, tinatry kopang tapusin tong notebook natoh for you.
-          and as im writing this, i just want you to know that every word in here is coming straight from the heart. <br /> <br />
+          and as im writing this, i cant help but smile, i just want you to know that every word in here is coming straight from the heart. <br />
           I bought you flowers, wrote you letters, made you lego flower, the ferrero, and now etong coded notebook. Who would've thought, na ako,
-          someone who has never done anything in his life na may effort, ay finally doing something na may worth for someone else. <br /> <br />
+          someone who has never done anything in his life na may effort, ay finally doing something na may worth for someone else.
         </>
       ),
     },
@@ -101,71 +101,75 @@ const RightPageContent = ({ pageNum }) => {
       greeting: 'Reminiscing',
       body: (
         <>
-          The way you laugh when something catches you off guard.<br /><br />
-          The way you care so deeply about the people around you.<br /><br />
-          The way you make ordinary days feel like something special.<br /><br />
-          I could fill a hundred pages and still not be done.
+          <br /> <br /> I miss it already. The calls na lumalagpas sa sleep sched mo kase andaldal naten, panay tawanan lng tayo,
+          tas sasabihin mo lng "cge another 10min", bago ka matulog, o kaya di lng ako nauubusan ng tanong tas panay sagot ka kase.
+          I miss it hannah, ung mga times na excited pa tayong mag call sa isat isa kase andami nating gusto ikwento. syempre pati ung mga times na
+          wala naman tayong sinasabe sa call, may kanya kanya taung ginagawa, ikaw nag rereview, ako nag ccode, pero magkasama lng tau.
+          I miss it all so much.
+
         </>
       ),
     },
     4: {
-      greeting: 'A promise',
+      greeting: 'Time',
       body: (
         <>
-          I promise to be here — on the good days
-          and the hard ones, the loud ones and the quiet ones.<br /><br />
-          I promise to choose you, every single day,
-          without hesitation.<br /><br />
-          You deserve all the love in the world, Hannah.
-          And I want to be the one who gives it to you.
+          <br /> <br /> Time really goes by so fast, and it's crazy to think about how much has happened since we first met. 
+          From our first conversation, to our first date, our first arguement, up to all the little moments in between.
+          These past months with you have been the happiest and most genuine moments I've had in a long time. You became someone I look forward to every day.
+          And what can i say, I really really love hearing your voice eh. 
+          and kung anong oras pa man ang meron ako sayo, I'll make sure to enjoy and cherish every second of it.
         </>
       ),
     },
     5: {
-      greeting: 'Just so you know',
+      greeting: 'Willingness',
       body: (
         <>
-          You are my favorite person.<br /><br />
-          My favorite voice, my favorite laugh,
-          my favorite everything.<br /><br />
-          Wherever life takes us, I am just glad
-          I get to walk through it with you beside me. ♡
+          <br /><br />I know things haven't always been perfect between us, we are polar opposites nga kamo eh.
+          ganto ako, ganyan ka, ayaw motoh, ako gusto ko yon, di tayo tugma eh. pero alam mo, ayokong makatugma kahit sino, ikaw lang.
+          and lately I realized, na maybe it's not about being perfect for each other, but about being willing to work through the imperfections together.
+          And I want you to know that I'm willing, Hannah. Willing to learn, willing to grow, willing to get hurt, and willing to do whatever it takes to make this work, because <b>YOU</b> are worth it all.
         </>
       ),
     },
     6: {
-      greeting: 'You are my sunshine',
+      greeting: 'Promise',
       body: (
         <>
-          On days when everything feels heavy,
-          just thinking of you makes it lighter.<br /><br />
-          You have this way of making everything
-          feel okay — just by being there.<br /><br />
-          I never want to take that for granted.
+         <br /><br /> You are a package eh noh, may mga times na nakakainis ka, may mga times na di kita gets, may mga times na unfair and unreasonable ka.
+         but you know what, I love them all about you, the good, the bad, and everything in between. I promise to always understand you at times when you dont even understand your own.
+         And I promise to love you not just for who you are,
+          but for who you are becoming, and for all the versions of you that I have yet to discover.
+          I just need you to watch and trust me, I want you to see me <br /> fulfill these promises.
+
         </>
       ),
     },
     7: {
-      greeting: 'One more thing',
+      greeting: 'A feeling',
       body: (
         <>
-          Of all the people in the world,
-          I am so glad it is you.<br /><br />
-          Not just today, not just this moment —
-          but every day, over and over again.<br /><br />
-          Always you. Only you. ♡
+          You felt like the kind of song i accidentally discovered at 2am, then suddenly i listen to it on repeat.
+          You felt like the kind of movie that i just know will be my favorite, even before the ending credits start rolling.
+          You felt like a prayer that just suddenly got answered, a wish that i didnt even know i made, and that says a lot because im agnostic.
+          If life gave me another chance to begin, I would still find my way back to you. not to fix the mistakes or change the ending,
+          but to feel you a little longer the second time around.
+          
         </>
       ),
     },
     8: {
-      greeting: 'Until the next page…',
+      greeting: 'Next page',
       body: (
         <>
-          This notebook may end here, but our story
-          is only just beginning.<br /><br />
-          Thank you for opening this, for reading every word,
-          and most of all — for being you.<br /><br />
-          I love you, Hannah. ♡
+          <br /> <br /> Maybe i was only a chapter in your story, just a page in your book, perhaps
+          just a sentence in your diary. but you know what, Im grateful for every word, every line, and every page that i got to be a part of in your life story.
+          but to me, you were the paragraph that changed the entire meaning of the story.
+          This notebook may end here, but who knows,
+          will it have a sequel? Will there be a part 2, or maybe even a trilogy? I guess it depends on how the story goes, but one thing's for sure, 
+          I hope to keep writing new pages with you, Hannah.
+
         </>
       ),
       isLast: true,
@@ -246,7 +250,7 @@ export default function Hannah() {
           <div className="nb-open">
 
             {/* corner flower */}
-            <img src={sglily2} alt="" className="nb-corner-lily nb-corner-lily--br" />
+            <img src={sglily1} alt="" className="nb-corner-lily nb-corner-lily--br" />
 
             <button className="nb-close-btn" onClick={handleCloseBook} aria-label="Close">✕</button>
 

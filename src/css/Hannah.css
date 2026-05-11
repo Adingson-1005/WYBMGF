@@ -354,7 +354,7 @@
 }
 .nb-corner-lily--br {
   bottom: -60px;
-  right: -130px;
+  right: -120px;
 }
 
 /* ── CLOSE BUTTON ── */
@@ -523,7 +523,7 @@
   }
   .nb-corner-lily--br {
     bottom: -30px;
-    right: -40px;
+    right: -30px;
   }
 
   /* bottom bar */
