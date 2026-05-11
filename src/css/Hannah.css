@@ -332,6 +332,7 @@
   font-style: italic;
   position: relative;
   z-index: 1;
+  font-weight: bold;
 }
 .nb-letter-close-hint {
   text-align: center;

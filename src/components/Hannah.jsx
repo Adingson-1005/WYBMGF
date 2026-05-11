@@ -93,7 +93,7 @@ const RightPageContent = ({ pageNum }) => {
           <br /> <br /> Here I am, 6am na in the morning, wala pakong tulog, tinatry kopang tapusin tong notebook natoh for you.
           and as im writing this, i cant help but smile, i just want you to know that every word in here is coming straight from the heart. <br />
           I bought you flowers, wrote you letters, made you lego flower, the ferrero, and now etong coded notebook. Who would've thought, na ako,
-          someone who has never done anything in his life na may effort, ay finally doing something na may worth for someone else.
+          someone who has never really enjoyed coding, ay naeenjoy mag code for the first time just to finish this notebook that i made for the person <br />i care about.
         </>
       ),
     },
