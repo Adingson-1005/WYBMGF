@@ -3,6 +3,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 /* ── WRAPPER ── */
@@ -11,10 +12,11 @@
   align-items: center;
   justify-content: center;
   font-family: 'Cormorant Garamond', serif;
-  padding: 2rem;
+  padding: 1rem;
   position: relative;
   overflow: hidden;
-  height: 100vh;
+  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 /* ── LILY BACKGROUND ── */
@@ -42,6 +44,9 @@
 .nb-content {
   position: relative;
   z-index: 3;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 /* ── CLOSED NOTEBOOK ── */
@@ -285,26 +290,48 @@
 
 /* ── LETTER ── */
 .nb-letter {
-  padding: 28px 24px 20px 18px;
+  padding: 20px 20px 16px 18px;
   height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
   position: relative;
   z-index: 1;
   box-sizing: border-box;
 }
+
+/* ── DROP LETTER ── */
+.nb-drop-letter {
+  font-family: 'Dancing Script', cursive;
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 1;
+  color: #e8b4c8;
+  opacity: 0.9;
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  z-index: 0;
+  pointer-events: none;
+  text-shadow: 1px 2px 0 rgba(180, 100, 130, 0.15);
+}
+
 .nb-letter-greeting {
   font-family: 'Dancing Script', cursive;
-  font-size: 20px;
+  font-size: 18px;
   color: #7a5c2e;
+  padding-left: 62px;
+  position: relative;
+  z-index: 1;
 }
 .nb-letter-body {
-  font-size: 15px;
+  font-size: 14px;
   color: #6b5240;
   line-height: 1.9;
   flex: 1;
   font-style: italic;
+  position: relative;
+  z-index: 1;
 }
 .nb-letter-close-hint {
   text-align: center;
@@ -313,6 +340,8 @@
   font-style: italic;
   letter-spacing: 0.05em;
   margin-top: 4px;
+  position: relative;
+  z-index: 1;
 }
 
 /* ── CORNER DECORATIVE FLOWERS ── */
@@ -323,10 +352,34 @@
   width: 250px;
   height: auto;
 }
-
 .nb-corner-lily--br {
   bottom: -30px;
   right: -130px;
+}
+
+/* ── CLOSE BUTTON ── */
+.nb-close-btn {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 30px;
+  height: 30px;
+  background: #f5ecd7;
+  border: 1.5px solid #c4a97a;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: #a88450;
+  z-index: 20;
+  transition: background 0.15s, transform 0.15s;
+  font-family: sans-serif;
+}
+.nb-close-btn:hover {
+  background: #eddfc0;
+  transform: scale(1.1);
 }
 
 /* ── BOTTOM BAR ── */
@@ -362,31 +415,6 @@
   user-select: none;
 }
 
-/* ── CLOSE BUTTON ── */
-.nb-close-btn {
-  position: absolute;
-  top: -14px;
-  right: -14px;
-  width: 30px;
-  height: 30px;
-  background: #f5ecd7;
-  border: 1.5px solid #c4a97a;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 13px;
-  color: #a88450;
-  z-index: 20;
-  transition: background 0.15s, transform 0.15s;
-  font-family: sans-serif;
-}
-.nb-close-btn:hover {
-  background: #eddfc0;
-  transform: scale(1.1);
-}
-
 /* ── LILY SVG ANIMATIONS ── */
 @keyframes sway1 {
   0%, 100% { transform: rotate(0deg); }
@@ -411,4 +439,139 @@
 .lily-r {
   transform-origin: 188px 167px;
   animation: sway3 4.5s ease-in-out infinite 1.5s;
+}
+
+/* ═══════════════════════════════════════
+   MOBILE — below 600px
+   Keeps side-by-side layout, just scaled down
+═══════════════════════════════════════ */
+@media (max-width: 600px) {
+
+  .nb-wrapper {
+    padding: 0.5rem;
+  }
+
+  /* closed notebook */
+  .nb-closed {
+    width: 150px;
+    height: 195px;
+  }
+  .nb-closed-title {
+    font-size: 22px;
+  }
+
+  /* open book container */
+  .nb-open {
+    width: 98vw;
+  }
+
+  /* shrink the book height */
+  .nb-book {
+    height: 260px;
+  }
+
+  /* thinner spine */
+  .nb-open-spine {
+    width: 14px;
+    min-width: 14px;
+  }
+
+  .nb-spiral {
+    width: 7px;
+    height: 7px;
+  }
+
+  /* drop letter */
+  .nb-drop-letter {
+    font-size: 42px;
+    top: 8px;
+    left: 10px;
+  }
+
+  /* letter text */
+  .nb-letter {
+    padding: 12px 12px 10px 12px;
+    gap: 5px;
+  }
+
+  .nb-letter-greeting {
+    font-size: 13px;
+    padding-left: 40px;
+  }
+
+  .nb-letter-body {
+    font-size: 2.5vw;
+    line-height: 1.7;
+  }
+
+  .nb-letter-close-hint {
+    font-size: 9px;
+  }
+
+  /* close button */
+  .nb-close-btn {
+    width: 24px;
+    height: 24px;
+    font-size: 11px;
+    top: -10px;
+    right: -8px;
+  }
+
+  /* corner flower */
+  .nb-corner-lily {
+    width: 120px;
+  }
+  .nb-corner-lily--br {
+    bottom: -30px;
+    right: -40px;
+  }
+
+  /* bottom bar */
+  .nb-bottom-bar {
+    margin-top: 8px;
+    gap: 4px;
+  }
+
+  .nb-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .nb-flip-hint {
+    font-size: 11px;
+  }
+}
+
+/* ═══════════════════════════════════════
+   SMALL TABLETS — 601px to 768px
+═══════════════════════════════════════ */
+@media (min-width: 601px) and (max-width: 768px) {
+
+  .nb-open {
+    width: 95vw;
+  }
+
+  .nb-book {
+    height: 340px;
+  }
+
+  .nb-drop-letter {
+    font-size: 56px;
+  }
+
+  .nb-letter-greeting {
+    font-size: 15px;
+  }
+
+  .nb-letter-body {
+    font-size: 13px;
+  }
+
+  .nb-corner-lily {
+    width: 180px;
+  }
+  .nb-corner-lily--br {
+    bottom: -20px;
+    right: -80px;
+  }
 }

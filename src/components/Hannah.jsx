@@ -56,7 +56,7 @@ const LilyBackground = () => (
 )
 
 /* ── SPIRALS ── */
-const Spirals = ({ count = 6 }) => (
+const Spirals = ({ count = 8 }) => (
   <>
     {Array.from({ length: count }).map((_, i) => (
       <div key={i} className="nb-spiral" />
@@ -64,84 +64,127 @@ const Spirals = ({ count = 6 }) => (
   </>
 )
 
-/* ── RIGHT PAGE CONTENTS (6 pages) ── */
-const PAGE_COUNT = 6
+/* ── PAGE LETTERS ── */
+const PAGE_LETTERS = ['I', 'L', 'O', 'V', 'E', 'Y', 'O', 'U']
+
+/* ── RIGHT PAGE CONTENTS (8 pages) ── */
+const PAGE_COUNT = 8
 
 const RightPageContent = ({ pageNum }) => {
-  if (pageNum === 1) return (
+  const letter = PAGE_LETTERS[pageNum - 1]
+
+  const contents = {
+    1: {
+      greeting: 'Hi Hannah,',
+      body: (
+        <>
+         <br /> <br /> I know we've had our Ups and downs lately, and i just want you to know na, despite all that,
+         I still care about you so much. I hope this little notebook can be a reminder of how much you mean to me, 
+         and how grateful I am to have you in my life. <br /> <br /> 
+         So, here goes nothing, a few pages of thoughts, feelings,
+         and memories that I never want to forget <br /> <br />
+        </>
+      ),
+    },
+    2: {
+      greeting: 'Every moment with you',
+      body: (
+        <>
+          I still remember the first time I saw you smile —
+          it was like the whole room got a little brighter.<br /><br />
+          I hope you know how much every little moment
+          with you means to me. Each one is a page
+          I never want to stop reading.
+        </>
+      ),
+    },
+    3: {
+      greeting: 'Things I love about you',
+      body: (
+        <>
+          The way you laugh when something catches you off guard.<br /><br />
+          The way you care so deeply about the people around you.<br /><br />
+          The way you make ordinary days feel like something special.<br /><br />
+          I could fill a hundred pages and still not be done.
+        </>
+      ),
+    },
+    4: {
+      greeting: 'A promise',
+      body: (
+        <>
+          I promise to be here — on the good days
+          and the hard ones, the loud ones and the quiet ones.<br /><br />
+          I promise to choose you, every single day,
+          without hesitation.<br /><br />
+          You deserve all the love in the world, Hannah.
+          And I want to be the one who gives it to you.
+        </>
+      ),
+    },
+    5: {
+      greeting: 'Just so you know',
+      body: (
+        <>
+          You are my favorite person.<br /><br />
+          My favorite voice, my favorite laugh,
+          my favorite everything.<br /><br />
+          Wherever life takes us, I am just glad
+          I get to walk through it with you beside me. ♡
+        </>
+      ),
+    },
+    6: {
+      greeting: 'You are my sunshine',
+      body: (
+        <>
+          On days when everything feels heavy,
+          just thinking of you makes it lighter.<br /><br />
+          You have this way of making everything
+          feel okay — just by being there.<br /><br />
+          I never want to take that for granted.
+        </>
+      ),
+    },
+    7: {
+      greeting: 'One more thing',
+      body: (
+        <>
+          Of all the people in the world,
+          I am so glad it is you.<br /><br />
+          Not just today, not just this moment —
+          but every day, over and over again.<br /><br />
+          Always you. Only you. ♡
+        </>
+      ),
+    },
+    8: {
+      greeting: 'Until the next page…',
+      body: (
+        <>
+          This notebook may end here, but our story
+          is only just beginning.<br /><br />
+          Thank you for opening this, for reading every word,
+          and most of all — for being you.<br /><br />
+          I love you, Hannah. ♡
+        </>
+      ),
+      isLast: true,
+    },
+  }
+
+  const c = contents[pageNum]
+
+  return (
     <div className="nb-letter">
-      <p className="nb-letter-greeting">Dear Hannah,</p>
-      <p className="nb-letter-body">
-        There are some people who make the world feel a little warmer
-        just by being in it — and you are one of them.<br /><br />
-        I put these flowers here because they reminded me of you:
-        soft, beautiful, and quietly extraordinary.<br /><br />
-        Thank you for being you. ♡
-      </p>
+      <span className="nb-drop-letter">{letter}</span>
+      <p className="nb-letter-greeting">{c.greeting}</p>
+      <p className="nb-letter-body">{c.body}</p>
+      {c.isLast && (
+        <p className="nb-letter-close-hint">tap once more to close</p>
+      )}
     </div>
   )
-  if (pageNum === 2) return (
-    <div className="nb-letter">
-      <p className="nb-letter-greeting">Every moment with you</p>
-      <p className="nb-letter-body">
-        I still remember the first time I saw you smile —
-        it was like the whole room got a little brighter.<br /><br />
-        I hope you know how much every little moment
-        with you means to me. Each one is a page
-        I never want to stop reading.
-      </p>
-    </div>
-  )
-  if (pageNum === 3) return (
-    <div className="nb-letter">
-      <p className="nb-letter-greeting">Things I love about you</p>
-      <p className="nb-letter-body">
-        The way you laugh when something catches you off guard.<br /><br />
-        The way you care so deeply about the people around you.<br /><br />
-        The way you make ordinary days feel like something special.<br /><br />
-        I could fill a hundred pages and still not be done.
-      </p>
-    </div>
-  )
-  if (pageNum === 4) return (
-    <div className="nb-letter">
-      <p className="nb-letter-greeting">A promise</p>
-      <p className="nb-letter-body">
-        I promise to be here — on the good days
-        and the hard ones, the loud ones and the quiet ones.<br /><br />
-        I promise to choose you, every single day,
-        without hesitation.<br /><br />
-        You deserve all the love in the world, Hannah.
-        And I want to be the one who gives it to you.
-      </p>
-    </div>
-  )
-  if (pageNum === 5) return (
-    <div className="nb-letter">
-      <p className="nb-letter-greeting">Just so you know</p>
-      <p className="nb-letter-body">
-        You are my favorite person.<br /><br />
-        My favorite voice, my favorite laugh,
-        my favorite everything.<br /><br />
-        Wherever life takes us, I am just glad
-        I get to walk through it with you beside me. ♡
-      </p>
-    </div>
-  )
-  if (pageNum === 6) return (
-    <div className="nb-letter">
-      <p className="nb-letter-greeting">Until the next page…</p>
-      <p className="nb-letter-body">
-        This notebook may end here, but our story
-        is only just beginning.<br /><br />
-        Thank you for opening this, for reading every word,
-        and most of all — for being you.<br /><br />
-        I love you, Hannah. ♡
-      </p>
-      <p className="nb-letter-close-hint">tap once more to close</p>
-    </div>
-  )
-  return null
 }
 
 /* ── MAIN ── */
@@ -203,15 +246,15 @@ export default function Hannah() {
         {bookOpen && (
           <div className="nb-open">
 
-            {/* corner flowers — inside nb-open so they're relative to the notebook */}
+            {/* corner flower */}
             <img src={sglily2} alt="" className="nb-corner-lily nb-corner-lily--br" />
+
             <button className="nb-close-btn" onClick={handleCloseBook} aria-label="Close">✕</button>
-            
+
             <div
               className={`nb-book nb-book-enter ${closing ? 'nb-book-exit' : ''}`}
               key={bookKey}
             >
-
               {/* Spine */}
               <div className="nb-open-spine"><Spirals count={8} /></div>
 
