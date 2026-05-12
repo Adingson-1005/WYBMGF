@@ -524,7 +524,7 @@
   }
   .nb-corner-lily--br {
     bottom: -30px;
-    right: -30px;
+    left: -50px;
   }
 
   /* bottom bar */

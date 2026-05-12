@@ -101,10 +101,10 @@ const RightPageContent = ({ pageNum }) => {
       greeting: 'Reminiscing',
       body: (
         <>
-          <br /> <br /> I miss it already. The calls na lumalagpas sa sleep sched mo kase andaldal naten, panay tawanan lng tayo,
-          tas sasabihin mo lng "cge another 10min", bago ka matulog, o kaya di lng ako nauubusan ng tanong tas panay sagot ka kase.
+          <br /> <br /> I miss it already. The calls na lumalagpas sa sleep sched mo kase andaldal naten eh panay tawanan lng naman,
+          tas sasabihin mo "cge another 10min" bago ka matulog, o kaya di lng ako nauubusan ng tanong.
           I miss it hannah, ung mga times na excited pa tayong mag call sa isat isa kase andami nating gusto ikwento. syempre pati ung mga times na
-          wala naman tayong sinasabe sa call, may kanya kanya taung ginagawa, ikaw nag rereview, ako nag ccode, pero magkasama lng tau.
+          wala naman tayong sinasabe sa call kase may kanya kanya tayong ginagawa, ikaw nag rereview, ako nag ccode, pero magkasama lng tayo.
           I miss it all so much.
 
         </>
@@ -115,10 +115,10 @@ const RightPageContent = ({ pageNum }) => {
       body: (
         <>
           <br /> <br /> Time really goes by so fast, and it's crazy to think about how much has happened since we first met. 
-          From our first conversation, to our first date, our first arguement, up to all the little moments in between.
+          From our first conversation, to our first call, to our first date, our first arguement, up to all the little moments in between.
           These past months with you have been the happiest and most genuine moments I've had in a long time. You became someone I look forward to every day.
           And what can i say, I really really love hearing your voice eh. 
-          and kung anong oras pa man ang meron ako sayo, I'll make sure to enjoy and cherish every second of it.
+          And kung anong oras pa man ang meron ako sayo, I'll make sure to enjoy and cherish every second of it.
         </>
       ),
     },
@@ -128,7 +128,7 @@ const RightPageContent = ({ pageNum }) => {
         <>
           <br /><br />I know things haven't always been perfect between us, we are polar opposites nga kamo eh.
           ganto ako, ganyan ka, ayaw motoh, ako gusto ko yon, di tayo tugma eh. pero alam mo, ayokong makatugma kahit sino, ikaw lang.
-          and lately I realized, na maybe it's not about being perfect for each other, but about being willing to work through the imperfections together.
+          and lately I realized na, maybe it's not about being perfect for each other, but about being willing to work through the imperfections together.
           And I want you to know that I'm willing, Hannah. Willing to learn, willing to grow, willing to get hurt, and willing to do whatever it takes to make this work, because <b>YOU</b> are worth it all.
         </>
       ),
@@ -141,7 +141,7 @@ const RightPageContent = ({ pageNum }) => {
          but you know what, I love them all about you, the good, the bad, and everything in between. I promise to always understand you at times when you dont even understand your own.
          And I promise to love you not just for who you are,
           but for who you are becoming, and for all the versions of you that I have yet to discover.
-          I just need you to watch and trust me, I want you to see me <br /> fulfill these promises.
+          I just need you to watch and trust me, I want you to see me fulfill these promises.
 
         </>
       ),
@@ -150,10 +150,11 @@ const RightPageContent = ({ pageNum }) => {
       greeting: 'A feeling',
       body: (
         <>
-          You felt like the kind of song i accidentally discovered at 2am, then suddenly i listen to it on repeat.
-          You felt like the kind of movie that i just know will be my favorite, even before the ending credits start rolling.
-          You felt like a prayer that just suddenly got answered, a wish that i didnt even know i made, and that says a lot because im agnostic.
-          If life gave me another chance to begin, I would still find my way back to you. not to fix the mistakes or change the ending,
+        <br /> <br />
+        You were the kind of line in a book that i would read twice, a scene in a movie i would rewatch over and over again,
+          and my favorite movie that I would rewatch nonstop. I'm agnostic we both know that, so I never believed in any miracles in the first place, 
+           yet somehow you arrived in my life exactly when my heart had already given up on miracles. 
+          And if life gave me another chance to begin, I would still find my way back to you. not to fix the mistakes or change the ending,
           but to feel you a little longer the second time around.
           
         </>
