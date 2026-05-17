@@ -15,14 +15,14 @@
 .gl-title {
   font-family: 'Dancing Script', cursive;
   font-size: 42px;
-  color: #7a5c2e;
+  color: black;
   line-height: 1.2;
 }
 
 .gl-sub {
   font-family: 'Cormorant Garamond', serif;
   font-size: 16px;
-  color: #b09070;
+  color: black;
   font-style: italic;
   margin-top: 6px;
 }
@@ -105,7 +105,7 @@
 .gl-placeholder-text {
   font-family: 'Cormorant Garamond', serif;
   font-size: 11px;
-  color: #b090a8;
+  color: black;
   font-style: italic;
   text-align: center;
   padding: 0 8px;
@@ -114,10 +114,150 @@
 .gl-caption {
   font-family: 'Dancing Script', cursive;
   font-size: 14px;
-  color: #9b7a4e;
+  color: black;
   text-align: center;
   margin-top: 10px;
   line-height: 1.3;
+}
+
+/* ── LETTER SECTION ── */
+.gl-letter-section {
+  max-width: 860px;
+  margin: 4rem auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+/* two polaroids side by side */
+.gl-letter-photos {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.gl-letter-polaroid {
+  background: #fffdf8;
+  padding: 12px 12px 40px;
+  box-shadow:
+    2px 3px 0 #e8d5b0,
+    4px 5px 0 #d8c09a,
+    0 8px 24px rgba(160, 100, 60, 0.15);
+  transform: rotate(-2deg);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+  width: 200px;
+}
+
+.gl-letter-polaroid:nth-child(2) {
+  transform: rotate(2deg);
+}
+
+.gl-letter-polaroid:hover {
+  transform: rotate(0deg) scale(1.04);
+  box-shadow:
+    2px 3px 0 #e8d5b0,
+    4px 5px 0 #d8c09a,
+    0 16px 40px rgba(160, 100, 60, 0.25);
+  z-index: 2;
+}
+
+.gl-letter-polaroid::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 18px;
+  background: rgba(255, 220, 180, 0.65);
+  border-radius: 2px;
+}
+
+.gl-letter-photo-box {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #f0e8e0;
+  overflow: hidden;
+}
+
+/* letter card */
+.gl-letter-card {
+  width: 100%;
+  max-width: 680px;
+  background: #fffdf8;
+  padding: 40px 44px 44px;
+  box-shadow:
+    2px 3px 0 #e8d5b0,
+    4px 5px 0 #d8c09a,
+    0 12px 40px rgba(160, 100, 60, 0.12);
+  position: relative;
+  /* lined paper */
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 31px,
+    #ede0c8 31px,
+    #ede0c8 32px
+  );
+  margin-bottom: 4rem;
+}
+
+/* tape at top */
+.gl-letter-card::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 64px;
+  height: 20px;
+  background: rgba(255, 220, 180, 0.65);
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.gl-letter-label {
+  font-family: 'Dancing Script', cursive;
+  font-size: 22px;
+  color: black;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.gl-letter-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.gl-letter-para {
+
+  font-size: 15px;
+  color: black;
+  line-height: 2;
+  font-style: italic;
+  text-align: justify;
+}
+
+/* ── MOBILE: letter section ── */
+@media (max-width: 600px) {
+  .gl-letter-photos {
+    gap: 1.5rem;
+  }
+  .gl-letter-polaroid {
+    width: 140px;
+    padding: 8px 8px 32px;
+  }
+  .gl-letter-card {
+    padding: 28px 20px 32px;
+  }
+  .gl-letter-para {
+    font-size: 13px;
+    line-height: 1.85;
+  }
 }
 
 /* ── MOBILE ── */

@@ -8,9 +8,9 @@ import Empty from './components/Empty'
 const TABS = [
   { id: 'notebook', label: '📓 Notebook' },
   { id: 'gallery',  label: '🖼️ Gallery'  },
-  { id: 'reasons',  label: '♡ 50 Reasons' },
-  { id: 'tab4',     label: '✦ Soon'       },
-  { id: 'tab5',     label: '✦ Soon'       },
+  { id: 'reasons',  label: 'Wait lang' },
+  { id: 'tab4',     label: 'Wait lang'       },
+  { id: 'tab5',     label: 'Wait lang'       },
 ]
 
 export default function App() {
@@ -37,9 +37,9 @@ export default function App() {
       <main className="app-main">
         {activeTab === 'notebook' && <Hannah />}
         {activeTab === 'gallery'  && <Gallery />}
-        {activeTab === 'reasons'  && <Reasons />}
-        {activeTab === 'tab4'     && <Empty title="Coming Soon" message="Something special is being prepared ♡" />}
-        {activeTab === 'tab5'     && <Empty title="Coming Soon" message="Watch this space ♡" />}
+        {activeTab === 'reasons'  && <Empty />}
+        {activeTab === 'tab4'     && <Empty />}
+        {activeTab === 'tab5'     && <Empty/>}
       </main>
     </div>
   )
